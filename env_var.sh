@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "The completed course name is $course"
+echo "The currently under training course name is $course"

@@ -7,5 +7,8 @@ echo "The sum of $num1 and $num2 is $summ"
 
 Names=("Kannada","Karnataka","KGF","Kantara","Milana")
 echo "The names are : ${Names[@]}"
-echo "The first name is :${Names[1]}"
+echo "The names are : ${Names[0]}"
+
+echo "The first name is :${Names[0]}"
+
 echo "The last name :${Names[10]}"

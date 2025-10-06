@@ -25,7 +25,7 @@ else
 echo "The Package mysql already exists .... Skipping Installation" 
 fi
 
-dnf list installed  mysql
+dnf list installed  nginx
 
 if [ $? -ne 0 ]
 then
@@ -35,7 +35,7 @@ else
 echo "The Package nginx already exists .... Skipping Installation" 
 fi
 
-dnf list installed  mysql
+dnf list installed  python3
 
 if [ $? -ne 0 ]
 then

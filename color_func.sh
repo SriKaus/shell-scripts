@@ -12,7 +12,7 @@ validate(){
 }
 if [ $User -ne 0 ]
 then
-echo "$gr Please try again with root permission"
+echo -e "$gr Please try again with root permission"
 
 else
 dnf list installed  mysql

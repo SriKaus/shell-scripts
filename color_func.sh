@@ -3,11 +3,11 @@ User=$(id -u)
 gr="\e[31m"
 re="\e[32m"
 validate(){
-    if $1 -ne 0
+    if [ $1 -ne 0 ]
     then
-    echo "Installing $2 .... $gr failed"
+    echo -e "Installing $2 .... $gr failed"
     else
-    echo "Installing $2 .... $re Success"
+    echo -e "Installing $2 .... $re Success"
     fi
 }
 if [ $User -ne 0 ]

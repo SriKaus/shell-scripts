@@ -11,9 +11,9 @@ mkdir -p $fold
 validate(){
     if [ $1 -ne 0 ]
     then
-    echo -e "Installing $2 .... $gr failed" $nr|tee $log_file
+    echo -e "Installing $2 .... $gr failed" $nr|tee -a $log_file
     else
-    echo -e "Installing $2 .... $re Success" $nr|tee $log_file
+    echo -e "Installing $2 .... $re Success" $nr|tee -a $log_file
     fi
 }
 if [ $User -ne 0 ]
@@ -28,7 +28,7 @@ then
 dnf install mysql
 validate $? "mysql"
 else
-echo "The Package mysql already exists .... Skipping Installation" |tee $log_file
+echo "The Package mysql already exists .... Skipping Installation" |tee -a $log_file
 fi
 
 dnf list installed nginx &>>$log_file
@@ -38,7 +38,7 @@ then
 dnf install nginx
 validate $? "nginx"
 else
-echo "The Package nginx already exists .... Skipping Installation"|tee $log_file 
+echo "The Package nginx already exists .... Skipping Installation"|tee -a $log_file 
 fi
 
 dnf list installed  python3 &>>$log_file
@@ -48,7 +48,7 @@ then
 dnf install python3
 validate $? "python3"
 else
-echo "The Package python3 already exists .... Skipping Installation"|tee $log_file
+echo "The Package python3 already exists .... Skipping Installation"|tee -a $log_file
 fi
 
 fi

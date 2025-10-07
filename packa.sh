@@ -2,6 +2,7 @@
 User=$(id -u)
 gr="\e[31m"
 re="\e[32m"
+nr="\e[0m"
 fold="/var/log/shell-scripts"
 script_name=$( echo $0|cut -d '.' -f1 )
 log_file="$fold/$script_name.logs"
@@ -10,14 +11,14 @@ mkdir -p $fold
 validate(){
     if [ $1 -ne 0 ]
     then
-    echo -e "Installing $2 .... $gr failed"|tee $log_file
+    echo -e "Installing $2 .... $gr failed" $nr|tee $log_file
     else
-    echo -e "Installing $2 .... $re Success"|tee $log_file
+    echo -e "Installing $2 .... $re Success" $nr|tee $log_file
     fi
 }
 if [ $User -ne 0 ]
 then
-echo -e "$gr Please try again with root permission"
+echo -e "$gr Please try again with root permission $nr"
 
 else
 dnf list installed  mysql>>$log_file

@@ -21,7 +21,7 @@ then
 echo -e "$gr Please try again with root permission $nr"
 
 else
-dnf list installed  mysql >>$log_file
+dnf list installed  mysql &>>$log_file
 
 if [ $? -ne 0 ]
 then
@@ -31,7 +31,7 @@ else
 echo "The Package mysql already exists .... Skipping Installation" |tee $log_file
 fi
 
-dnf list installed  nginx >>$log_file
+dnf list installed nginx &>>$log_file
 
 if [ $? -ne 0 ]
 then
@@ -41,7 +41,7 @@ else
 echo "The Package nginx already exists .... Skipping Installation"|tee $log_file 
 fi
 
-dnf list installed  python3 >>$log_file
+dnf list installed  python3 &>>$log_file
 
 if [ $? -ne 0 ]
 then

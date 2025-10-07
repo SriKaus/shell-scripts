@@ -3,7 +3,7 @@ User=$(id -u)
 gr="\e[31m"
 re="\e[32m"
 fold="/var/log/shell-scripts"
-script_name=$($0|cut -d '.' -f1)
+script_name=$( echo $0|cut -d '.' -f1 )
 log_file="$fold/$script_name.logs"
 mkdir -p $fold
 
